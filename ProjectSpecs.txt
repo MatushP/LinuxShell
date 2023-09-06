@@ -1,0 +1,30 @@
+Linux SHell + Presentation
+
+Abstract: Solution (mysh) must use necessary Linux system calls
+		- Minimal or no use of additional library functions
+			
+Basic Functionality: Shell runs in interactive mode
+		- Repeately prompt user
+		- Read command line from std. input
+		- Execute commands (& respond w/ appropriate message if error)
+		- Interactive Login Shelf
+		
+Command Line Format: >= 0 whitespace delimitter "words", terminated by '/n'
+		- Allowed upperbound length limit (256 characters)
+	
+Background Jobs: User commands are to run in the foreground, w/ mysh suspending
+	execution until command executable terminates.
+		- Also able to run commands in background via end command line w/ '&'
+		- Functions and behaves like "bash"
+		
+Basic Command Pipeline: Ability to connect output of 1st command to input of
+	2nd command via '|'  
+		- Support two-stage pipelining @ minimum
+		
+Implemenation Requirements: 
+		- Implemented in C, have makefile to compile, and runnable on Linux VM
+		
+Restrictions on the Library Functions:
+		- C standard library only, still minimal or no use of std lib aside from
+		  C wrapper function to Linux system calls
+		- Intent for program to rely on system calls only
